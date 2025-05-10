@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# WhatsApp Web Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a clone of WhatsApp Web built using modern web technologies. It allows users to log in using their Google account, scan a QR code, and access a chat interface. The application is designed to mimic the look and feel of WhatsApp Web while providing a seamless user experience.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A strongly typed programming language that builds on JavaScript.
+- **Vite**: A fast build tool and development server.
+- **Material-UI (MUI)**: A popular React UI framework for building responsive and accessible components.
+- **Google OAuth**: For user authentication via Google accounts.
+- **JWT Decode**: To decode JSON Web Tokens for user data.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Google Login**: Users can log in using their Google account.
+- **QR Code Scanning**: Mimics the WhatsApp Web login process.
+- **Chat Interface**: A simple chat interface for demonstration purposes.
+- **Responsive Design**: Optimized for various screen sizes.
 
-- Configure the top-level `parserOptions` property like this:
+## Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The project is organized as follows:
+
+```
+src/
+  components/       # React components for the UI
+  context/          # Context API for managing global state
+  constants/        # Static data and constants
+  assets/           # Static assets like images
+  App.tsx           # Main application component
+  main.tsx          # Entry point of the application
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## How to Run
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd chat_with_me
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and navigate to `http://localhost:3000`.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Deployment
+
+The project can be built and deployed using the following commands:
+
+1. Build the project:
+   ```bash
+   npm run build
+   ```
+2. Preview the production build:
+   ```bash
+   npm run preview
+   ```
+
+## License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
